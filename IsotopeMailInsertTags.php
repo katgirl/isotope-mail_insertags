@@ -39,8 +39,8 @@ class IsotopeMailInsertTags extends IsotopeOrder
 	 */
 	public function getOrderEmailData(IsotopeOrder $objOrder, $arrData)
 	{
-    $arrData['note']      = $objOrder->note;
-    $arrData['note_text'] = $this->replaceInsertTags($objOrder->note);
+    $arrData['note']      = $objOrder->notes;
+    $arrData['note_text'] = strip_tags($objOrder->notes);
 		
 		return $arrData;
 	}
