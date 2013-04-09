@@ -33,16 +33,18 @@
  */
 class IsotopeMailInsertTags extends IsotopeOrder
 { 
-	
-	/**
-	 * Push new Insert Tags into Maildataarray
-	 */
-	public function getOrderEmailData(IsotopeOrder $objOrder, $arrData)
-	{
-    $arrData['note']      = $objOrder->notes;
-    $arrData['note_text'] = strip_tags($objOrder->notes);
-		
-		return $arrData;
-	}
-	
-}	
+  
+  /**
+   * Push new Insert Tags into Maildataarray
+   */
+  public function getOrderEmailData(IsotopeOrder $objOrder, $arrData)
+  {
+    $arrData['note']         = $objOrder->notes;
+    $arrData['note_text']    = strip_tags($objOrder->notes);
+    $arrData['date_paid']    = $this->parseDate($GLOBALS['TL_CONFIG']['dateFormat'], $objOrder->date_paid);
+    $arrData['date_shipped'] = $this->parseDate($GLOBALS['TL_CONFIG']['dateFormat'], $objOrder->date_shipped);
+    
+    return $arrData;
+  }
+  
+}  
