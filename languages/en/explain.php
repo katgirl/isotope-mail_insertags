@@ -30,4 +30,6 @@
 /**
  * Help Wizard explanations
  */
-$GLOBALS['TL_LANG']['XPL']['isoMailTokens']['note']	= array('##note##<br />##note_text##', 'Note as HTML or plain text.');
+$GLOBALS['TL_LANG']['XPL']['isoMailTokens']['note']	                = array('##note##<br />##note_text##', 'Note as HTML or plain text.');
+$GLOBALS['TL_LANG']['XPL']['isoMailTokens']['date_paid']            = array('##date_paid##', 'Paid date.');
+$GLOBALS['TL_LANG']['XPL']['isoMailTokens']['date_shipped']         = array('##date_shipped##', 'Shipping date.');
